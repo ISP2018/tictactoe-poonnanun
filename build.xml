@@ -6,7 +6,7 @@
     <property name="classes.dir" value="${build.dir}/classes"/>
     <property name="jar.dir"     value="${build.dir}/jar"/>
 	<property name="test.build.dir" value="bin/test"/>
-	<property name="test.src.dir" value="tictactoe-test"/>
+	<property name="test.src.dir" value="test"/>
 	<property name="main-class"  value="tictactoe.Main"/>
 	<property name="lib.dir" value="lib"/>
 
@@ -70,9 +70,8 @@
 				<path refid="classpath.test"/>
 				<pathelement location="${test.build.dir}"/>
 			</classpath>
-			<formatter type="brief" usefile="false" />
 			<batchtest>
-				<fileset dir="${test.build.dir}" includes="**/*Test.java" />
+				<fileset dir="${test.build.dir}" includes="**/*Test.class" />
 			</batchtest>
 		</junit>
 	</target>
