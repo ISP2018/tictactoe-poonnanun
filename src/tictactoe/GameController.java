@@ -30,7 +30,7 @@ public class GameController {
 	
 	@FXML
 	public void initialize() {
-		game = new TicTacToeGame(3);
+		game = new TicTacToeGame(4);
 		Board board = game.getBoard();
 		// make the board size match the size of pane where it is shown
 		centerPane.getChildren().add(board);
@@ -51,7 +51,10 @@ public class GameController {
 	
 	private void updateGameStatus() {
 		Player winner = game.winner();
-		if (winner != Player.NONE) topLabel.setText("Player "+winner+" wins!");
+		if (winner != Player.NONE) {
+			topLabel.setText("Player "+winner+" wins!");
+			centerPane.setDisable(true);
+		}
 		else if (game.isGameOver()) topLabel.setText("Draw. No winner.");
 		else topLabel.setText("Next Player: " + game.getNextPlayer());
 		
@@ -79,5 +82,6 @@ public class GameController {
 	/** Handler for button click to start a new game. */
 	public void handleNewGameEvent(ActionEvent event) {
 		game.startNewGame();
+		centerPane.setDisable(false);
 	}
 }
