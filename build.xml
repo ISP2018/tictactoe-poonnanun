@@ -4,7 +4,7 @@
 
     <property name="build.dir"   value="bin"/>
     <property name="classes.dir" value="${build.dir}/classes"/>
-    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="jar.dir"     value="."/>
 	<property name="test.build.dir" value="bin/test"/>
 	<property name="test.src.dir" value="test"/>
 	<property name="main-class"  value="tictactoe.Main"/>
